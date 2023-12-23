@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Vehículos</title>
+    <style>
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            margin: 0;
+            flex-direction: column; 
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #formContainer {
+            margin-top: 20px; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; 
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>INGRESO DE VEHICULOS</h2>
+
+<!-- Formulario para agregar y editar carro -->
+
+<form id="carForm">
+    <label for="placa">Placa:</label>
+    <input type="text" id="placa" name="placa" required>
+    <br>
+
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" name="marca" required>
+    <br>
+
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" name="modelo" required>
+    <br>
+
+    <label for="ano">Año:</label>
+    <input type="number" id="ano" name="ano" required>
+    <br>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" required>
+    <br>
+
+   
+    <input type="hidden" id="selectedCarId" name="selectedCarId" value="">
+
+    <button type="button" onclick="saveCar()">Guardar</button>
+</form>
+
+<!-- Tabla para mostrar la lista de carros -->
+<table id="carTable">
+    <thead>
+        <tr>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Color</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-carid="ID_DEL_CARRO">
+            <td>Placa del Carro</td>
+            <td>Marca del Carro</td>
+            <td>Modelo del Carro</td>
+            <td>Año del Carro</td>
+            <td>Color del Carro</td>
+            <td>
+                
+                <button onclick="deleteCar('ID_DEL_CARRO')">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="app.js"></script>
+
+</body>
+</html>
